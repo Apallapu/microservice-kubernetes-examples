@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mybus-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mybus-service
+  template:
+    metadata:
+      labels:
+        app: mybus-service
+    spec:
+      containers:
+      - name: mybus-service
+        image: ankammapallapu/mybus-service:latest
